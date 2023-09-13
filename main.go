@@ -13,7 +13,7 @@ import (
 // a handler is by using the `http.HandlerFunc` adapter
 // on functions with the appropriate signature.
 func hello(w http.ResponseWriter, req *http.Request) {
-	
+
 	// Functions serving as handlers take a
 	// `http.ResponseWriter` and a `http.Request` as
 	// arguments. The response writer is used to fill in the
@@ -42,6 +42,7 @@ func main() {
 	// takes a function as an argument.
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/headers", headers)
+	http.HandleFunc("/register-user", headers)
 
 	// Finally, we call the `ListenAndServe` with the port
 	// and a handler. `nil` tells it to use the default
